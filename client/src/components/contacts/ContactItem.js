@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import ContactContext from '../../context/contact/contactContext';
 
 const ContactItem = ({ contact }) => {
-    const { id, name, email, phone, type } = contact;
-    const { delectContact, setCurrent, clearCurrent } = useContext(ContactContext);
+    const { _id, name, email, phone, type } = contact;
+    const { deleteContact, setCurrent, clearCurrent } = useContext(ContactContext);
     const badge = type === 'professional' ? 'badge-success' : 'badge-primary';
     const onDelete = () => {
-        delectContact(id);
+        deleteContact(_id);
         clearCurrent();
     };
 
